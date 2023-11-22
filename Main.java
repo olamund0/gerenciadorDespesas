@@ -6,8 +6,9 @@ public class Main {
 		GerenciadorDespesas gerenciador = new GerenciadorDespesas();
 		Despesa netflix = new Despesa("netflix", 10, 2);
 		Despesa primeVideo = new Despesa("prime", 15, 3);
-		Despesa HBO = new Despesa("HBO MAX", 20, 2);
+		Despesa HBO = new Despesa("HBO MAX", 50, 2);
 		Despesa NBA = new Despesa("NBA", 70, 1);
+		
 		
 		//Adicione uma despesa
 		

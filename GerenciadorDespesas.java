@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class GerenciadorDespesas {
 	
 	ArrayList<Despesa> listaDespesas = new ArrayList<Despesa>();
-	ArrayList<Double> custoTotal = new ArrayList<Double>();
 
 	
 	public void adicionarDespesa(Despesa despesa) {
@@ -25,32 +24,18 @@ public class GerenciadorDespesas {
 	}
 	
 	public void limparDespesa() {
-		listaDespesas.removeAll(listaDespesas);
+		listaDespesas.clear();
 	}
 	
 	public double calcularCustoMensal() {
-		
-		double valor = 0;
-		int recorrencia = 0;
 		double produto = 0;
-		
-		for(Despesa d : listaDespesas) {
-			valor += d.getValor();
-			recorrencia += d.getRecorrencia();
-			
-			produto = valor * recorrencia;
-			
-			custoTotal.add(produto);
-			
-			valor = 0;
-			recorrencia = 0;
-			produto = 0;
-			
-		}
 		double soma = 0;
 		
-		for(double d : custoTotal) {
-			soma += d;			
+		for(Despesa d : listaDespesas) {
+			
+			produto = d.getValor() * d.getRecorrencia();
+			
+			soma += produto;	
 		}
 		
 		return soma;
